@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    /* 开启透视效果 */
+    perspective: 8000px; 
+
+}
+
+#container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+section {
+    width: 450px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 900s linear infinite;
+
+}
+
+section:nth-child(2) {
+    animation: rotate2 900s linear infinite;
+}
+/* 这里的rotate2是一个动画名称，而900s表示动画的持续时间，linear是动画的timing-function，表示动画的播放是匀速的，而infinite表示动画会无限次循环播放。*/
+section div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../image/1.jpeg);
+    background-size: cover;
+}
+
+
+@keyframes rotate {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+@keyframes rotate2 {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    100% {
+        transform: rotateX(-360deg);
+    }
+}
